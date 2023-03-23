@@ -7,9 +7,11 @@ import Icon from 'react-native-vector-icons/EvilIcons';
 type Props = {
     task: string;
     onRemove: () => void;
+    addFinished: () => void;
+    removeFinished: () => void;
 }
 
-function Tasks({ task, onRemove }: Props) {
+function Tasks({ task, onRemove, addFinished, removeFinished }: Props) {
     const [color, setColor] = useState('#1E6F9F')
 
     return (
@@ -22,10 +24,12 @@ function Tasks({ task, onRemove }: Props) {
                 textStyle={{ fontSize: 14, maxWidth: 260 }}
                 onPress={(isChecked: boolean) => {
                     if (isChecked) {
+                        addFinished()
                         return setColor('#8284FA')
                     }
 
                     if (!isChecked) {
+                        removeFinished()
                         return setColor('#1E6F9F')
                     }
                 }}

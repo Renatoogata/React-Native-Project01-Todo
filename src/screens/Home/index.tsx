@@ -7,6 +7,7 @@ function Home() {
     const [tasks, setTasks] = useState<string[]>([]);
     const [taskName, setTaskName] = useState('');
     const [totalTasks, setTotalTasks] = useState(0);
+    const [finishedTasks, setFinishedTasks] = useState(0);
 
     function handleTaskAdd() {
         if (taskName === '' || taskName === ' ') {
@@ -32,6 +33,14 @@ function Home() {
                 style: 'cancel'
             }
         ])
+    }
+
+    function handleAddFinished() {
+        setFinishedTasks(state => state + 1)
+    }
+
+    function handleRemoveFinished() {
+        setFinishedTasks(state => state - 1)
     }
 
     return (
@@ -75,7 +84,7 @@ function Home() {
                     </Text>
 
                     <Text style={styles.total}>
-                        0
+                        {finishedTasks}
                     </Text>
                 </View>
             </View>
@@ -90,6 +99,8 @@ function Home() {
                             key={item}
                             task={item}
                             onRemove={() => handleTaskRemove(item)}
+                            addFinished={() => handleAddFinished()}
+                            removeFinished={() => handleRemoveFinished()}
                         />
                     )}
                     showsVerticalScrollIndicator={false}
