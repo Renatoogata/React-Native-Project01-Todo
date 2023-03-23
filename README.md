@@ -17,7 +17,7 @@
 
 ```bash
     # Clone Repository
-    $ git clone https://github.com/Renatoogata/reactive-native-project01-todo
+    $ git clone https://github.com/Renatoogata/React-Native-Project01-Todo
 ``` 
 
 ```bash
@@ -34,3 +34,6 @@
 
 ![Image](./assets/home.png)
 ![Image](./assets//projetoDemo.gif)
+
+## Updates
+- Fixed Count of finished tasks
