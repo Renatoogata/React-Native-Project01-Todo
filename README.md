@@ -17,7 +17,7 @@
 
 ```bash
     # Clone Repository
-    $ git clone https://github.com/Renatoogata/React-Native-Project01-Todo
+    $ git clone https://github.com/Renatoogata/React-Native-Project01-Todo.git
 ``` 
 
 ```bash
